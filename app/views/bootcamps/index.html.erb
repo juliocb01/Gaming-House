@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <h1>Bootcamps</h1>
+  <%= link_to 'Create a bootcamp', new_bootcamp_path, class: 'btn btn-success' %>
+  <% @bootcamps.each do |bootcamp| %>
+    <%= link_to bootcamp_path(bootcamp) do %>
+      <p><%= bootcamp.name %></p>
+    <% end %>
+  <% end %>
+</div>

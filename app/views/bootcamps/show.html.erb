@@ -1,0 +1,12 @@
+<div>
+  <h1><%= @bootcamp.name.capitalize %></h1>
+  <p><%="by #{@bootcamp.user.name}" %></p>
+</div>
+
+<ul>
+<li><%= @bootcamp.address %></li>
+<li><%= @bootcamp.pc_number %></li>
+<li><%= @bootcamp.availability ? "disponível" : "indisponível" %></li>
+<li><%= @bootcamp.price %></li>
+
+</ul>
