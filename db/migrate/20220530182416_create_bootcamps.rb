@@ -5,7 +5,7 @@ class CreateBootcamps < ActiveRecord::Migration[6.1]
       t.string :address
       t.integer :pc_number
       t.string :name
-      t.boolean :availability
+      t.boolean :availability, default: true
       t.decimal :price, precision: 10, scale: 2
       t.timestamps
     end
