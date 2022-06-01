@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_184149) do
     t.string "address"
     t.integer "pc_number"
     t.string "name"
-    t.boolean "availability", default: true
+    t.boolean "availability"
     t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
