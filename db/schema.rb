@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2022_05_30_184149) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "bootcamp_id", null: false
-    t.date "start_date"
-    t.date "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bootcamp_id"], name: "index_bookings_on_bootcamp_id"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_184149) do
     t.string "address"
     t.integer "pc_number"
     t.string "name"
-    t.boolean "availability", default: true
+    t.boolean "availability"
     t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
