@@ -9,4 +9,6 @@
 <li><%= @bootcamp.availability ? "disponível" : "indisponível" %></li>
 <li><%= @bootcamp.price %></li>
 
+  <%= link_to 'Create a booking', new_bootcamp_booking_path(@bootcamp), class: 'btn btn-success' %>
+
 </ul>
