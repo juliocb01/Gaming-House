@@ -1,16 +1,15 @@
 class BootcampsController < ApplicationController
   def index
-    @bootcamps = policy_scope(Bootcamp).order(created_at: :desc)
+    @bootcamps = Bootcamp.all
   end
 
   def show
     @bootcamp = Bootcamp.find(params[:id])
-    authorize @bootcamp
   end
+  #find(params[:id]) puxa pelo nome
 
   def new
     @bootcamp = Bootcamp.new
-    authorize @bootcamp
   end
 
   def edit
@@ -18,7 +17,6 @@ class BootcampsController < ApplicationController
 
   def create
     @bootcamp = Bootcamp.new(bootcamp_params)
-    authorize @bootcamp
     @bootcamp.user = current_user
     if @bootcamp.save
       redirect_to @bootcamp
@@ -36,11 +34,11 @@ class BootcampsController < ApplicationController
     end
   end
 
-  def destroy
-    @bootcamp = Bootcamp.find(params[:id])
-    @bootcamp.destroy
-    redirect_to @bootcamp.index
-  end
+def destroy
+  @bootcamp = Bootcamp.find(params[:id])
+  @bootcamp.destroy
+  redirect_to @bootcamp.index
+end
 
   private
 
