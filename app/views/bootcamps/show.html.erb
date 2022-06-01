@@ -2,6 +2,11 @@
   <h1><%= @bootcamp.name.capitalize %></h1>
   <p><%="by #{@bootcamp.user.name}" %></p>
 </div>
+  <%= link_to 'Edit Bootcamp', edit_bootcamp_path(@bootcamp), class: 'btn btn-primary' %>
+<div>
+
+
+</div>
 
 <ul>
 <li><%= @bootcamp.address %></li>

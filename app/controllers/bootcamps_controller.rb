@@ -15,6 +15,7 @@ class BootcampsController < ApplicationController
   end
 
   def edit
+    @bootcamp = Bootcamp.find(params[:id])
   end
 
   def create
