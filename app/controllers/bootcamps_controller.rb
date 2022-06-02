@@ -31,6 +31,8 @@ class BootcampsController < ApplicationController
     @bootcamp.user = current_user
     if @bootcamp.save
       redirect_to @bootcamp
+    else
+      render :new
     end
   end
 
