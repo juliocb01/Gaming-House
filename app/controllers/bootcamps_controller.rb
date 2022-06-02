@@ -11,6 +11,11 @@ class BootcampsController < ApplicationController
 
   def show
     @bootcamp = Bootcamp.find(params[:id])
+    @markers = [
+      {
+        lat: @bootcamp.latitude,
+        lng: @bootcamp.longitude
+      }]
   end
 
   def new
