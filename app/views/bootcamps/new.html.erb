@@ -1,8 +1,8 @@
 <div class="container">
- <div class="d-flex align-center justify-content-between">
+ <div class="d-flex  justify-content-between">
   <h1>Create a bootcamp</h1>
 
-  <%= link_to 'Back', bootcamps_path, class: "btn return-btn" %>
+  <%= link_to 'Return', bootcamps_path, class: "btn return-btn align-self-center" %>
 </div>
 
 <%= simple_form_for @bootcamp do |f|  %>
@@ -19,7 +19,8 @@
   <%= f.submit class: 'btn btn-create btn-rounded'%>
 
   <%= f.input :photo, as: :file %>
-  <%= f.submit "entre aspas", class: 'btn btn-create btn-rounded'%>
+
+  <%= f.submit "create", class: 'btn btn-create btn-rounded'%>
 
   <%# <%= raise %>
 <% end %>
