@@ -52,6 +52,6 @@ class BootcampsController < ApplicationController
   private
 
   def bootcamp_params
-    params.require(:bootcamp).permit(:user_id, :address, :name, :pc_number, :price, :photo)
+    params.require(:bootcamp).permit(:user_id, :address, :name, :pc_number, :price, photos: [])
   end
 end
