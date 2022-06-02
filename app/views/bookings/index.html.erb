@@ -3,7 +3,7 @@
 
   <% @bookings.each do |booking| %>
     <%= link_to booking_path(booking) do %>
-      <p><%= booking.name %></p>
+      <p><%= booking.bootcamp.name %></p>
     <% end %>
   <% end %>
 </div>
