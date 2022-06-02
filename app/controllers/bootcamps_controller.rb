@@ -1,6 +1,12 @@
 class BootcampsController < ApplicationController
   def index
     @bootcamps = Bootcamp.all
+    @markers = @bootcamps.geocoded.map do |bootcamp|
+      {
+        lat: bootcamp.latitude,
+        lng: bootcamp.longitude
+      }
+    end
   end
 
   def show
