@@ -11,9 +11,7 @@ class BookingsController < ApplicationController
   def new
     @bootcamp = Bootcamp.find(params[:bootcamp_id])
     @booking = Booking.new
-   # authorize @booking
   end
-
 
   def edit
   end
@@ -32,6 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def update
+
     if @booking.update(booking_params)
       redirect_to @booking, notice: 'booking was successfully updated.'
     else
@@ -39,11 +38,11 @@ class BookingsController < ApplicationController
     end
   end
 
-def destroy
+  def destroy
   @booking = Booking.find(params[:id])
   @booking.destroy
   redirect_to @booking.index
-end
+  end
 
   private
 
