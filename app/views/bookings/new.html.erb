@@ -4,7 +4,7 @@
 <%= simple_form_for([@bootcamp, @booking]) do |f| %>
 <%= f.input :start_date %>
 <%= f.input :end_date %>
-<%= f.button :submit %>
+<%= f.submit  class: 'btn btn-create btn-rounded m-3' %>
 <% end %>
 <%= link_to 'Return', bootcamps_path(@bootcamp), class: "btn return-btn" %>
 
