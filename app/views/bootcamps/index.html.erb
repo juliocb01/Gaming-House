@@ -1,19 +1,18 @@
 <div class="container mt-5 bootcamps ">
-  <div class='d-flex'>
     <div>
       <h1>Bootcamps</h1>
       <%= link_to 'Create a bootcamp', new_bootcamp_path, class: 'btn btn-create' %>
       <% @bootcamps.each do |bootcamp| %>
-        <%= link_to bootcamp_path(bootcamp) do %>
-          <p><%= bootcamp.name %></p>
-        <% end %>
-      <% end %>
-    </div>
+      <%= link_to bootcamp_path(bootcamp), class: "link-show" do %>
 
-    <div style="width: 100%; height: 600px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+      <div class="card">
+        <div class="blob"></div>
+        <span class="img"></span>
+        <h2><%= bootcamp.name %><br><span><%= bootcamp.user.name %></span></h2>
+        <p> start playing</p>
+      </div>
+
+      <% end %>
+    <% end %>
   </div>
 </div>

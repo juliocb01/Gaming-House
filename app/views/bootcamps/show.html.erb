@@ -5,11 +5,6 @@
   <%= link_to 'Edit Bootcamp', edit_bootcamp_path(@bootcamp), class: 'btn btn-secondary' %>
   <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-danger' %>
 
-<div>
-
-
-</div>
-
 <ul>
 <li><%= @bootcamp.address %></li>
 <li><%= @bootcamp.pc_number %></li>
@@ -19,3 +14,9 @@
   <%= link_to 'Create a booking', new_bootcamp_booking_path(@bootcamp), class: 'btn btn-success' %>
 
 </ul>
+
+<div style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
