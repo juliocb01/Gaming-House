@@ -8,7 +8,12 @@
 <%= simple_form_for @bootcamp do |f|  %>
   <%= f.input :name  %>
   <%= f.input :address,
+<<<<<<< HEAD
     input_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'], geocoder_target: "address" } }  %>
+=======
+    input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+    wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }  %>
+>>>>>>> 4014a9994c93ac54567290d2f66d48efe3135fee
   <%= f.input :price %>
   <%= f.input :pc_number %>
   <%= f.input :photo, as: :file %>
