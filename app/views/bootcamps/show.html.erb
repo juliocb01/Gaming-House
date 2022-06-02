@@ -5,6 +5,22 @@
   <%= link_to 'Edit Bootcamp', edit_bootcamp_path(@bootcamp), class: 'btn btn-secondary' %>
   <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-danger' %>
 
+  <% if @bootcamp.photos.attached? %>
+    <% @bootcamp.photos.each do |photo| %>
+      <div class="p-5" style="background-image: url(<%= cl_image_path photo.key %>)" >
+        <div class="py-5">
+
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="p-5" style="background-image: url(<%= asset_path("pcsetup.jpg") %>); background-size: cover" >
+      <div class="py-5">
+
+      </div>
+    </div>
+  <% end %>
+
 <ul>
 <li><%= @bootcamp.address %></li>
 <li><%= @bootcamp.pc_number %></li>
