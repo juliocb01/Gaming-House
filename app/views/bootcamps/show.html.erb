@@ -2,7 +2,9 @@
   <h1><%= @bootcamp.name.capitalize %></h1>
   <p><%="by #{@bootcamp.user.name}" %></p>
 </div>
-  <%= link_to 'Edit Bootcamp', edit_bootcamp_path(@bootcamp), class: 'btn btn-primary' %>
+  <%= link_to 'Edit Bootcamp', edit_bootcamp_path(@bootcamp), class: 'btn btn-secondary' %>
+  <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-danger' %>
+
 <div>
 
 

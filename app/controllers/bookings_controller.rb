@@ -1,19 +1,16 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = policy_scope(Booking).order(created_at: :desc)
     @bookings = Booking.all
   end
 
   def show
     @booking = Booking.find(params[:id])
-    authorize @booking
   end
   #find(params[:id]) puxa pelo nome
 
   def new
     @bootcamp = Bootcamp.find(params[:bootcamp_id])
     @booking = Booking.new
-    authorize @booking
   end
 
   def edit
@@ -33,6 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def update
+
     if @booking.update(booking_params)
       redirect_to @booking, notice: 'booking was successfully updated.'
     else
