@@ -12,13 +12,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="vh-100">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%# <div class="main-container"> %>
       <%= yield %>
     <%# </div> %>
-    <div class="footer">
+
+  </body>
+      <div class="footer">
       <div class="footer-links">
         <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -31,5 +33,4 @@
       </div>
     </div>
 
-  </body>
 </html>
