@@ -36,15 +36,15 @@ li{
   padding-bottom: 100px; /* height of your footer */
  }
 
- #header {
-  background-image: url("https://images.unsplash.com/photo-1633545505446-586bf83717f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z2FtaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60");
-  background-size: cover;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(226, 226, 226)
-}
+//  #header {
+//   background-image: url("https://images.unsplash.com/photo-1633545505446-586bf83717f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z2FtaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60");
+//   background-size: cover;
+//   height: 500px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: rgb(226, 226, 226)
+// }
 
 .gaming_house {
   position: relative;
@@ -89,4 +89,18 @@ body {
 .about_us {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+.message_below_video {
+  display: flex;
+  justify-content: center;
+}
+
+strong {
+  margin-top: 10px;
 }
