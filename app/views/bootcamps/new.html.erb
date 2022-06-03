@@ -6,22 +6,23 @@
 
         <%= link_to 'Return', bootcamps_path, class: "btn return-btn align-self-center" %>
       </div>
+      <div class="form-style">
+        <%= simple_form_for @bootcamp do |f|  %>
+          <%= f.input :name  %>
+          <%= f.input :address,
 
-      <%= simple_form_for @bootcamp do |f|  %>
-        <%= f.input :name  %>
-        <%= f.input :address,
+            input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+            wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }  %>
 
-          input_html: { data: { geocoder_target: "address" }, class: "d-none" },
-          wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }  %>
+          <%= f.input :price %>
+          <%= f.input :pc_number %>
 
-        <%= f.input :price %>
-        <%= f.input :pc_number %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.submit class: 'btn btn-create btn-rounded'%>
 
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit class: 'btn btn-create btn-rounded'%>
-
-        <%# <%= raise %>
-      <% end %>
+          <%# <%= raise %>
+        <% end %>
+        </div>
     </div>
 
     <div class='col-6' style="background-image: url('<%= image_path("create.jpg")%>');  background-size: cover; background-position: center; border-radius: 0px 20px 20px 0px">

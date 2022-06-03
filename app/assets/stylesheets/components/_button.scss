@@ -32,7 +32,7 @@
   color: #f7f7f7;
   background-color: #1e2528;
   border-radius: 15px;
-  box-shadow: 1px 1px 3px #23c483;
+  box-shadow: 1px 1px 3px rgb(35, 196, 131);
   transition: 0.2s;
   letter-spacing: 2.5px;
 
@@ -100,4 +100,15 @@
   font-size: 20px;
   box-shadow: 1px 1px 1px rgba(244, 49, 49, 0.6);
   transition: 0.2s;
+}
+
+.btn-login{
+  background-color: #23c483 !important;
+  color: #f7f7f7;
+}
+
+.btn-login:hover{
+  background-color: #f7f7f7;
+  color: #1e2528;
+  font-size: 20px;
 }

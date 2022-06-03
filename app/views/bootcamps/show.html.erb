@@ -1,40 +1,54 @@
-<div>
-  <h1><%= @bootcamp.name.capitalize %></h1>
-  <p><%="by #{@bootcamp.user.name}" %></p>
-</div>
-  <%= link_to 'Edit', edit_bootcamp_path(@bootcamp), class: 'btn btn-edit' %>
-  <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-delete' %>
 
-  <%= link_to 'Return', bootcamps_path, class: "btn return-btn" %>
+<div class="px-5">
 
-  <% if @bootcamp.photos.attached? %>
-    <% @bootcamp.photos.each do |photo| %>
-      <div class="p-5" style="background-image: url(<%= cl_image_path photo.key %>)" >
-        <div class="py-5">
-
+  <div class="d-flex justify-content-between align-items-center px-5 mx-5">
+     <div class="d-flex align-items-center">
+      <div>
+        <h1><%= @bootcamp.name.capitalize %></h1>
+        <p><%="by #{@bootcamp.user.name}" %></p>
+      </div>
+        <%= link_to 'Return', bootcamps_path, class: "mx-5 btn return-btn" %>
         </div>
+      <div>
+       <%= link_to 'Edit', edit_bootcamp_path(@bootcamp), class: 'btn btn-edit mx-5' %>
+    <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-delete' %>
       </div>
-    <% end %>
-  <% else %>
-    <div class="p-5" style="background-image: url(<%= asset_path("pcsetup.jpg") %>); background-size: cover" >
-      <div class="py-5">
+  </div>
+  </div>
+<div class="container">
+  <div class="vh-100 row my-5 d-flex justify-content-between "  style='box-shadow: 1px 1px 3px #23c483; border-radius: 20px'>>
+    <div class='col-3 p-5'>
+      <% if @bootcamp.photos.attached? %>
+        <% @bootcamp.photos.each do |photo| %>
+          <div class="p-5" style="width:300px; height: 192px; background-image: url(<%= cl_image_path photo.key %>); background-size: cover; background-repeat: no-repeat;" >
+            <div class="py-5">
 
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="p-5" style="width:300px; height: 192px; background-image: url(<%= asset_path("pcsetup.jpg") %>); background-size: cover; background-repeat: no-repeat;" >
+          <div class="py-5">
+
+          </div>
+        </div>
+      <% end %>
+
+    <ul class="mt-5 list-group">
+    <li class="list-group-item" style="background-color:#1e2528; color:#d3d3d4"><strong>Address: </strong> <%="#{@bootcamp.address}" %></li>
+    <li class="list-group-item" style="background-color:#1e2528; color:#d3d3d4"><strong>PC Number: </strong><%="#{@bootcamp.pc_number}" %></li>
+    <li class="list-group-item" style="background-color:#1e2528; color:#d3d3d4"><%=  @bootcamp.availability ? "Available" : "Unavailable" %></li>
+    <li class="list-group-item" style="background-color:#1e2528; color:#d3d3d4"><strong>Daily Price: </strong><%="#{@bootcamp.price}" %></li>
+
+      <%= link_to 'Booking', new_bootcamp_booking_path(@bootcamp), class: 'btn btn-create btn-rounded mt-5' %>
+
+    </ul>
+  </div>
+  <div class="col-1"></div>
+  <div class='col-7 flex-grow-1' style=" background-size: cover; background-position: center; border-radius: 0px 20px 20px 0px"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>
-  <% end %>
-
-<ul>
-<li><%= @bootcamp.address %></li>
-<li><%= @bootcamp.pc_number %></li>
-<li><%= @bootcamp.availability ? "disponível" : "indisponível" %></li>
-<li><%= @bootcamp.price %></li>
-
-  <%= link_to 'Booking', new_bootcamp_booking_path(@bootcamp), class: 'btn btn-create btn-rounded' %>
-
-</ul>
-
-<div style="width: 50%; height: 300px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+</div>
+</div>
