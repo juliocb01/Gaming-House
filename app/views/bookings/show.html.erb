@@ -4,7 +4,7 @@
 </div>
 
 <ul>
-<li><%="check-in at #{@booking.start_date}" %></li>
-<li><%="check-out at #{@booking.end_date}" %></li>
-
+<li>check-in at <%= l @booking.start_date, format: :long %></li>
+<li>check-out at <%= l @booking.end_date, format: :long %></li>
+<li>Total price: <%= number_to_currency(@booking.total_price) %>
 </ul>
