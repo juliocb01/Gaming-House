@@ -89,6 +89,8 @@ body {
 
 .video video {
   width: 100%;
+  max-height: 500px;
+  object-fit:cover
 }
 
 .message_below_video {
@@ -101,14 +103,17 @@ strong {
 }
 
 .banner_home {
+  height: 500px;
   position: relative;
 }
 
 .gaming_house {
+  margin-top: 56px;
   position: absolute;
-  text-align: center;
-  margin-left: auto;
+  text-align: left;
+  margin-left: 35px;
   margin-right: auto;
   left: 0;
   right: 0;
+  font-size: 63px;
 }

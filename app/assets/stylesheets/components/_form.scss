@@ -1,5 +1,21 @@
 
-.form-label{
-  color: #0ef6be;
+.form-style{
+  .form-label{
+    color: #0ef6be;
 
-}
+  }
+
+  // background-color: #1e2528 !important;
+  // color: #f7f7f7;
+
+ input{
+    background-color: #2b3438;
+    color: #f7f7f7;
+  }
+  .form-inputs input:focus{
+      color: #f7f7f7;
+    }
+    .form-check-label{
+      color: #0ef6be;
+    }
+  }
