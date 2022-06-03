@@ -37,7 +37,7 @@ li{
  }
 
  #header {
-  background-image: url("https://archive.esportsobserver.com/wp-content/uploads/2017/03/stadium.jpg");
+  background-image: url("https://images.unsplash.com/photo-1633545505446-586bf83717f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z2FtaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60");
   background-size: cover;
   height: 500px;
   display: flex;
@@ -76,13 +76,6 @@ body {
   clear: both;
 }
 
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
 
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
