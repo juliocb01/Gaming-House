@@ -2,8 +2,10 @@
   <h1><%= @bootcamp.name.capitalize %></h1>
   <p><%="by #{@bootcamp.user.name}" %></p>
 </div>
-  <%= link_to 'Edit Bootcamp', edit_bootcamp_path(@bootcamp), class: 'btn btn-secondary' %>
-  <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-danger' %>
+  <%= link_to 'Edit', edit_bootcamp_path(@bootcamp), class: 'btn btn-edit' %>
+  <%= link_to 'X', bootcamp_path(@bootcamp), method: 'delete', data: { confirm: 'Remove bootcamp?' }, class: 'btn btn-delete' %>
+
+  <%= link_to 'Return', bootcamps_path, class: "btn return-btn" %>
 
   <% if @bootcamp.photos.attached? %>
     <% @bootcamp.photos.each do |photo| %>
