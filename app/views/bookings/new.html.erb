@@ -1,11 +1,21 @@
 <div class="container">
-  <h1>Create a booking</h1>
+  <div class='row vh-100 mt-5'  style='box-shadow: 1px 1px 3px #23c483; border-radius: 20px'>
+    <div class='col-6 p-5' >
+        <div class="d-flex  justify-content-between">
+          <h1>Create a booking</h1>
 
-<%= simple_form_for([@bootcamp, @booking]) do |f| %>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-<%= f.submit  class: 'btn btn-create btn-rounded m-3' %>
-<% end %>
-<%= link_to 'Return', bootcamps_path(@bootcamp), class: "btn return-btn" %>
+          <%= link_to 'Return', bootcamps_path, class: "btn return-btn align-self-center" %>
+        </div>
 
+          <%= simple_form_for([@bootcamp, @booking]) do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit  class: 'btn btn-create btn-rounded m-3' %>
+          <% end %>
+    </div>
+
+    <div class='col-6' style="background-image: url('<%= image_path("booking.jpg")%>'); size:cover; border-radius: 0px 20px 20px 0px">
+
+    </div>
+  </div>
 </div>
