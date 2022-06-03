@@ -46,10 +46,6 @@ li{
 //   color: rgb(226, 226, 226)
 // }
 
-.gaming_house {
-  position: relative;
-  text-align: center;
-}
 
 * {
   box-sizing: border-box;
@@ -91,9 +87,8 @@ body {
   margin-bottom: 50px;
 }
 
-.video {
-  display: flex;
-  justify-content: center;
+.video video {
+  width: 100%;
 }
 
 .message_below_video {
@@ -103,4 +98,17 @@ body {
 
 strong {
   margin-top: 10px;
+}
+
+.banner_home {
+  position: relative;
+}
+
+.gaming_house {
+  position: absolute;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
